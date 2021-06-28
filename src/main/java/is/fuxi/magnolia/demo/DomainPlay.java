@@ -1,11 +1,11 @@
-package tech.fxn.magnolia.demo;
+package is.fuxi.magnolia.demo;
 
 import com.github.javafaker.Faker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xbill.DNS.TextParseException;
-import tech.fxn.magnolia.EntropyClient;
-import tech.fxn.magnolia.v1.*;
+import is.fuxi.magnolia.EntropyClient;
+import is.fuxi.magnolia.v1.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

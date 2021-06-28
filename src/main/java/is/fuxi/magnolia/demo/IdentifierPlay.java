@@ -1,11 +1,11 @@
-package tech.fxn.magnolia.demo;
+package is.fuxi.magnolia.demo;
 
 import com.github.javafaker.Faker;
 import com.google.protobuf.ByteString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tech.fxn.magnolia.EntropyClient;
-import tech.fxn.magnolia.v1.*;
+import is.fuxi.magnolia.EntropyClient;
+import is.fuxi.magnolia.v1.*;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;

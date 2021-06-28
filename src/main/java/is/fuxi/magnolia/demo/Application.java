@@ -1,11 +1,11 @@
-package tech.fxn.magnolia.demo;
+package is.fuxi.magnolia.demo;
 
 
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tech.fxn.magnolia.EntropyClient;
+import is.fuxi.magnolia.EntropyClient;
 
 /**
  *
