@@ -50,7 +50,7 @@ if (JavaVersion.current().isJava8Compatible()) {
 }
 
 dependencies {
-    implementation("is.fuxi:magnolia-sdk-java:0.0.1-SNAPSHOT") {
+    implementation("is.fuxi:magnolia:0.0.1-SNAPSHOT") {
         changing = true
     }
     implementation 'dnsjava:dnsjava:3.4.0'
