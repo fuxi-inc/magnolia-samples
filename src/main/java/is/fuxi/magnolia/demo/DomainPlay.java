@@ -1,6 +1,7 @@
 package is.fuxi.magnolia.demo;
 
 import com.github.javafaker.Faker;
+import is.fuxi.magnolia.TrustedLedgerClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xbill.DNS.TextParseException;
@@ -15,14 +16,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DomainPlay {
     private static Logger logger = LoggerFactory.getLogger(DomainPlay.class);
     EntropyClient client;
+    TrustedLedgerClient ledgerClient;
 
     private Faker faker = new Faker();
     private String domainName;
 
-    public DomainPlay(EntropyClient client) {
+    public DomainPlay(EntropyClient client, TrustedLedgerClient ledgerClient) {
         this.client = client;
+        this.ledgerClient = ledgerClient;
     }
-
 
     public void show() throws TextParseException {
         // 查找可用的Namespace
@@ -41,6 +43,8 @@ public class DomainPlay {
         getDomain();
         // 删除域名
         deleteDomain();
+        // 溯源
+        traceDomain();
     }
 
     private Namespace listAvailableNamespaces() {
@@ -160,6 +164,14 @@ public class DomainPlay {
         GeneralResponse response = client.getStub().deleteDomain(request);
         assertThat(response.getResult().getStatusCode()).isEqualTo(200);
         logger.info("delete domain:{} successfully", domainName);
+    }
+
+    private void traceDomain() {
+        TracingResponse response = ledgerClient.getStub().trace(TracingRequest.newBuilder()
+                .setEventId(domainName)
+                .build());
+        assertThat(response.getResult().getStatusCode()).isEqualTo(200);
+        logger.info("trace domain:{} successfully, result: {}", domainName, response);
     }
 
 }
