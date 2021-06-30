@@ -32,7 +32,7 @@ public class Application {
         // 演示如何使用标识相关的API接口
         IdentifierPlay play = new IdentifierPlay(entropyClient);
         try {
-            //play.show();
+            play.show();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
