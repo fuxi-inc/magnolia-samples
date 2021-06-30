@@ -66,7 +66,7 @@ public class IdentifierPlay {
     }
 
     private Namespace listAvailableNamespaces() {
-        NamespacesResponse resp = client.getStub().listNamespace(GeneralPaginationRequest.getDefaultInstance());
+        NamespacesResponse resp = client.getStub().availableNamespace(GeneralPaginationRequest.getDefaultInstance());
         assertThat(resp.getResult().getStatusCode()).isEqualTo(200);
         assertThat(resp.getDataCount() >= 1).isTrue();
         logger.info("current available namespace list:\n{}", resp.getDataList());
