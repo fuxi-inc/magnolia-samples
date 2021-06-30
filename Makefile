@@ -1,10 +1,9 @@
 .ONESHELL:
 .PHONY: build
 build:
-	gradle clean shadowJar --refresh-dependencies
+	gradle clean build --refresh-dependencies
 	echo "Build phrase done."
 
-.PHONY: publish
-publish:
-	gradle clean publish
-	echo "Publish done"
+.PHONY: run
+run: build
+	gradle run
