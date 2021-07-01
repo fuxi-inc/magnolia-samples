@@ -24,7 +24,7 @@ configurations.all() {
 repositories {
     jcenter()
     maven {
-        url publicRepoUrl
+        url "http://repo.tech.fuxi.is:8081/repository/maven-public/"
         allowInsecureProtocol true
         credentials {
             username = "guest"
