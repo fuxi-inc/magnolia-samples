@@ -52,7 +52,7 @@ public class IdentifierPlay {
         // 查看注册成功的身份标识
         getIdentityIdentifier(identityIdentifier);
         // 创建数据标识
-        crreateDataIdentifier();
+        createDataIdentifier();
         // 查询数据标识
         testGetDataIdentifier();
         // 根据标签查找数据标识
@@ -132,7 +132,7 @@ public class IdentifierPlay {
         logger.info("delete identity identifier {} succesfully", identityIdentifierName);
     }
 
-    public void crreateDataIdentifier() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+    public void createDataIdentifier() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
         String dataDigest = faker.crypto().sha256();
         Signature signature = Signature.getInstance("SHA256withRSA");
         signature.initSign(pair.getPrivate());

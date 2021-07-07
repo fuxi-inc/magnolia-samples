@@ -22,13 +22,12 @@ configurations.all() {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
     maven {
-        url "http://repo.tech.fuxi.is:8081/repository/maven-public/"
-        allowInsecureProtocol true
+        url "https://repo.fxn.tech/repository/maven-public/"
         credentials {
-            username = "guest"
-            password = "FXZK2021!@#"
+            username  "guest"
+            password  "FXZK2021!@#"
         }
     }
 }

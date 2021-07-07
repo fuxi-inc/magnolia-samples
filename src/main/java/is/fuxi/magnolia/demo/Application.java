@@ -30,9 +30,9 @@ public class Application {
         ledgerClient = new TrustedLedgerClient(apiServerAddress, apiKey, apiSecret);
 
         // 演示如何使用标识相关的API接口
-        IdentifierPlay play = new IdentifierPlay(entropyClient);
+        IdentifierPlay identifierPlay = new IdentifierPlay(entropyClient);
         try {
-            play.show();
+            identifierPlay.show();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -40,6 +40,13 @@ public class Application {
         DomainPlay domainPlay = new DomainPlay(entropyClient, ledgerClient);
         try {
             domainPlay.show();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        LedgerPlay ledgerPlay = new LedgerPlay(ledgerClient);
+        try {
+            ledgerPlay.show();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
