@@ -24,7 +24,7 @@ configurations.all() {
 repositories {
     mavenCentral()
     maven {
-        url "https://repo.fxn.tech/repository/maven-public/"
+        url "https://repo.fuxitechnology.com/repository/maven-public/"
         credentials {
             username  "guest"
             password  "FXZK2021!@#"
